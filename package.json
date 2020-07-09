@@ -1,0 +1,17 @@
+{
+  "name": "AlexSmithsElectionCommentsApp",
+  "private": "true",
+  "version": "0.0.1",
+  "description": "No description yet!",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.9.8",
+    "body-parser": "^1.8.4",
+    "jade": "^1.6.0",
+    "mongoose": "^4.4.20",
+    "request": "^2.72.0"
+  }
+}

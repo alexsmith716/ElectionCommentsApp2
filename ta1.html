@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="data:image/x-icon;" type="image/x-icon" rel="shortcut icon">
+		<intercept-url pattern="/favicon.ico" access="ROLE_ANONYMOUS">
+		</intercept-url>
+		<link href="public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="public/bootstrap/css/bootstrap-select.min.css" rel="stylesheet">
+		<link href="public/stylesheets/style2.css" rel="stylesheet">
+		<title>MEANCRUDApp</title>
+	</head>
+	<body>
+		<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" data-toggle="collapse" data-target="#navbar-main" aria-expanded="false" aria-controls="navbar" class="navbar-toggle">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar">
+					</span>
+					<span class="icon-bar">
+					</span>
+					<span class="icon-bar">
+					</span>
+					</button>
+					<button id="navbarBrandBtn" class="btn clrFavForm navbar-brand">ThisGreatApp!</button>
+				</div>
+				<div id="navbar-main" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li> <a href="/about">About</a>
+					</li>
+					<li> <a href="/contact">Contact</a>
+				</li>
+				<li> <a href="/team">Team</a>
+			</li>
+		</ul>
+	</div>
+</div>
+</div>
+<div class="container">
+<form role="form" id="myFavNoveltiesForm" class="form myFavNoveltiesFormClass">
+	<div id="updateFormModal" tabindex="-1" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Edit your comment</h4>
+				</div>
+				<div class="modal-body">
+					<fieldset>
+						<div class="form-group">
+							<label for="firstName" class="control-label">First Name</label>
+							<div>
+								<input id="firstName" name="firstName" placeholder="first name" maxlength="10" type="text" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="lastName" class="control-label">Last Name</label>
+							<div>
+								<input id="lastName" name="lastName" placeholder="last name" maxlength="10" type="text" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="city" class="control-label">City</label>
+							<div>
+								<input id="city" name="city" placeholder="city" maxlength="10" type="text" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="state" class="control-label">State</label>
+							<div>
+								<select id="state" name="state" data-size="5" class="form-control selectpicker">
+									<option value="" data-content="&lt;span style='color: #999999'&gt;state&lt;/span&gt;" class="text-hide selected disabled">state</option>
+									<option value="AL">Alabama</option>
+									<option value="AK">Alaska</option>
+									<option value="AZ">Arizona</option>
+									<option value="AR">Arkansas</option>
+									<option value="CA">California</option>
+									<option value="CO">Colorado</option>
+									<option value="CT">Connecticut</option>
+									<option value="DE">Delaware</option>
+									<option value="DC">District Of Columbia</option>
+									<option value="FL">Florida</option>
+									<option value="GA">Georgia</option>
+									<option value="HI">Hawaii</option>
+									<option value="ID">Idaho</option>
+									<option value="IL">Illinois</option>
+									<option value="IN">Indiana</option>
+									<option value="IA">Iowa</option>
+									<option value="KS">Kansas</option>
+									<option value="KY">Kentucky</option>
+									<option value="LA">Louisiana</option>
+									<option value="ME">Maine</option>
+									<option value="MD">Maryland</option>
+									<option value="MA">Massachusetts</option>
+									<option value="MI">Michigan</option>
+									<option value="MN">Minnesota</option>
+									<option value="MS">Mississippi</option>
+									<option value="MO">Missouri</option>
+									<option value="MT">Montana</option>
+									<option value="NE">Nebraska</option>
+									<option value="NV">Nevada</option>
+									<option value="NH">New Hampshire</option>
+									<option value="NJ">New Jersey</option>
+									<option value="NM">New Mexico</option>
+									<option value="NY">New York</option>
+									<option value="NC">North Carolina</option>
+									<option value="ND">North Dakota</option>
+									<option value="OH">Ohio</option>
+									<option value="OK">Oklahoma</option>
+									<option value="OR">Oregon</option>
+									<option value="PA">Pennsylvania</option>
+									<option value="RI">Rhode Island</option>
+									<option value="SC">South Carolina</option>
+									<option value="SD">South Dakota</option>
+									<option value="TN">Tennessee</option>
+									<option value="TX">Texas</option>
+									<option value="UT">Utah</option>
+									<option value="VT">Vermont</option>
+									<option value="VA">Virginia</option>
+									<option value="WA">Washington</option>
+									<option value="WV">West Virginia</option>
+									<option value="WI">Wisconsin</option>
+									<option value="WY">Wyoming</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="candidate" class="control-label">Which candidate do you support?</label>
+							<div>
+								<div class="radio">
+									<label for="candidate1">
+										<input type="radio" id="candidate1" name="candidate" value="I support Donald Trump">
+										<span>I support Donald Trump</span>
+									</label>
+								</div>
+								<div class="radio">
+									<label for="candidate2">
+										<input type="radio" id="candidate2" name="candidate" value="I support Hillary Clinton">
+										<span>I support Hillary Clinton</span>
+									</label>
+								</div>
+								<div class="radio">
+									<label for="candidate0">
+										<input type="radio" id="candidate0" name="candidate" value="I support neither candidate">
+										<span>I support neither candidate</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="comment" class="control-label">Comment about the candidates</label>
+							<div>
+								<textarea id="comment" name="comment" placeholder="your comments" rows="3" maxlength="350" class="form-control">
+								</textarea>
+							</div>
+						</div>
+						<div style="height:15px;" class="col-xs-12">
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-primary btn-md">Submit Form</button>&nbsp;&nbsp;&nbsp;&nbsp;<button data-dismiss="modal" class="btn btn-warning btn-md">Cancel</button>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+<div class="page-header">
+	<h2>A Presidential CRUD App</h2>
+</div>
+<div class="row">
+	<div class="col-xs-12 col-sm-8">
+		<div style="height:10px;">
+		</div>
+		<div>
+			<a href="/addnewcomment" class="btn btn-primary btn-md">Post a Comment</a>
+			<div class="pull-right">
+				<button type="button" class="btn btn-default btn-md">
+				<span class="glyphicon glyphicon-menu-left"> </span>Back</button>&nbsp;&nbsp;<button type="button" class="btn btn-default btn-md">
+				<span class="glyphicon glyphicon-menu-right">
+				</span>Next</button>
+			</div>
+		</div>
+		<div style="height:30px;">
+		</div>
+		<div class="row list-group">
+			<div class="col-xs-12 list-group-item">
+				<h4>WWWWWWWWWW WWWWWWWWWW<small>, WWWWWWWWWW, CA<br>
+				<small>August 24, 2016</small>
+				</small>
+				</h4>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<i>Which candidate do I support? ...</i>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-xs-12">
+								<p class="controlOverflow"><h5>I support Donald Trump.</h5></p>
+								<p class="controlOverflow"><h5>WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</h5></p>
+								<p class="controlOverflow">For more information, please visit: http://csstricks.com/thisisanonexistentandreallylongurltoaddtoanytextinfactwhyareyoustillreadingit. WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pull-right">
+					<form method="post" action="/comments/5794ec3dce4c0bcc02226f1a?_method=put" class="btn-group">
+						<button type="submit" class="btn btn-default btn-md">Edit</button>
+					</form>&nbsp;&nbsp;&nbsp;&nbsp;<form method="post" action="/comments/5794ec3dce4c0bcc02226f1a?_method=delete" class="btn-group inline">
+					<button type="submit" class="btn btn-warning btn-md">Delete</button>
+				</form>
+			</div>
+			<div style="height:40px;">
+			</div>
+		</div>
+		<div class="col-xs-12 list-group-item">
+			<h4>Flabbba Jabbba<small>, Qubbbba, CA<br>
+			<small>August 23, 2016</small>
+			</small>
+			</h4>
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<i>Which candidate do I support? ...</i>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-xs-12">
+							<p class="controlOverflow">
+								<h5>I support Hillary Clinton.</h5>
+							</p>
+							<p class="controlOverflow">
+								<h5>Xmfmfgmgijgdijfgndfignijdfg.</h5>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pull-right">
+				<form method="post" action="/comments/579386b02f17ed4d04343757?_method=put" class="btn-group">
+					<button type="submit" class="btn btn-default btn-md">Edit</button>
+				</form>&nbsp;&nbsp;&nbsp;&nbsp;<form method="post" action="/comments/579386b02f17ed4d04343757?_method=delete" class="btn-group inline">
+				<button type="submit" class="btn btn-warning btn-md">Delete</button>
+			</form>
+		</div>
+		<div style="height:40px;">
+		</div>
+	</div>
+	<div class="col-xs-12 list-group-item">
+		<h4>Fdddddd Eoooooo<small>, Tyyyyy, AL<br>
+		<small>August 20, 2016</small>
+		</small>
+		</h4>
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<i>Which candidate do I support? ...</i>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-xs-12">
+						<p class="controlOverflow">
+							<h5>I support Donald Trump.</h5>
+						</p>
+						<p class="controlOverflow">
+							<h5>
+							</h5>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pull-right">
+			<form method="post" action="/comments/578f9b7fdc5d97e4029ee5e9?_method=put" class="btn-group">
+				<button type="submit" class="btn btn-default btn-md">Edit</button>
+			</form>&nbsp;&nbsp;&nbsp;&nbsp;<form method="post" action="/comments/578f9b7fdc5d97e4029ee5e9?_method=delete" class="btn-group inline">
+			<button type="submit" class="btn btn-warning btn-md">Delete</button>
+		</form>
+	</div>
+	<div style="height:40px;">
+	</div>
+</div>
+<div class="col-xs-12 list-group-item">
+	<h4>Zxcxcxz Dfvvdfvdf<small>, Dghgfghfgh, AL<br>
+	<small>August 20, 2016</small>
+	</small>
+	</h4>
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<i>Which candidate do I support? ...</i>
+		</div>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-xs-12">
+					<p class="controlOverflow">
+						<h5>I support Donald Trump.</h5>
+					</p>
+					<p class="controlOverflow">
+						<h5>Xvvvvvvvvv</h5>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="pull-right">
+		<form method="post" action="/comments/578f9ab512f06ad30270163f?_method=put" class="btn-group">
+			<button type="submit" class="btn btn-default btn-md">Edit</button>
+		</form>&nbsp;&nbsp;&nbsp;&nbsp;<form method="post" action="/comments/578f9ab512f06ad30270163f?_method=delete" class="btn-group inline">
+		<button type="submit" class="btn btn-warning btn-md">Delete</button>
+	</form>
+</div>
+<div style="height:40px;">
+</div>
+</div>
+<div class="col-xs-12 list-group-item">
+<h4>Bpppppppp Hqqqqqq<small>, Uaaaaa, AL<br>
+<small>August 20, 2016</small>
+</small>
+</h4>
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<i>Which candidate do I support? ...</i>
+	</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-xs-12">
+				<p class="controlOverflow">
+					<h5>I support Hillary Clinton.</h5>
+				</p>
+				<p class="controlOverflow">
+					<h5>Ammmmmmppppprrrrrrrttt.</h5>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="pull-right">
+	<form method="post" action="/comments/578f903d2b33406d04efecf2?_method=put" class="btn-group">
+		<button type="submit" class="btn btn-default btn-md">Edit</button>
+	</form>&nbsp;&nbsp;&nbsp;&nbsp;<form method="post" action="/comments/578f903d2b33406d04efecf2?_method=delete" class="btn-group inline">
+	<button type="submit" class="btn btn-warning btn-md">Delete</button>
+</form>
+</div>
+<div style="height:40px;">
+</div>
+</div>
+</div>
+<div style="height:10px;">
+</div>
+<div>
+<a href="/addnewcomment" class="btn btn-primary btn-md">Post a Comment</a>
+<div class="pull-right">
+<button type="button" class="btn btn-default btn-md">
+<span class="glyphicon glyphicon-menu-left"> </span>Back</button>&nbsp;&nbsp;<button type="button" class="btn btn-default btn-md">
+<span class="glyphicon glyphicon-menu-right">
+</span>Next</button>
+</div>
+</div>
+<div style="height:30px;">
+</div>
+</div>
+<div class="col-xs-12 col-sm-4">
+<p class="lead">The 2016 presidential election is upon us! Who do you support and what are your comments regarding this hotly contested event?</p>
+</div>
+</div>
+</div>
+<footer>
+<div class="container">
+<p class="text-muted">
+<small>&copy; Alex Smith 2016</small>
+</p>
+</div>
+</footer>
+<script src="public/javascripts/jQuery.min.v2.2.4.js">
+</script>
+<script src="public/javascripts/jquery.validate.min.js">
+</script>
+<script src="public/bootstrap/js/bootstrap.min.js">
+</script>
+<script src="public/bootstrap/js/bootstrap-select.js">
+</script>
+<script src="public/javascripts/formValidation.js">
+</script>
+</body>
+</html>
